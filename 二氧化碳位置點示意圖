@@ -1,0 +1,411 @@
+import pygame as pg
+import threading
+
+s = 400
+
+running = True
+
+pg.init()
+
+screen = pg.display.set_mode((500,375))
+
+pg.display.set_caption('')
+get = pg.image.load('123.png') 
+back = pg.image.load('back.png')
+white = pg.image.load('white.png')
+
+b1 = pg.image.load('b1.png') ; b2 = pg.image.load('b2.png') ; b3 = pg.image.load('b3.png')
+b4 = pg.image.load('b4.png') ; b5 = pg.image.load('b5.png') ; b6 = pg.image.load('b6.png')
+b7 = pg.image.load('b7.png') ; b8 = pg.image.load('b8.png') ; b9 = pg.image.load('b9.png')
+b10 = pg.image.load('b10.png') ; b11 = pg.image.load('b11.png') ; b12 = pg.image.load('b12.png')
+b13 = pg.image.load('b13.png') ; b14 = pg.image.load('b14.png') ; b15 = pg.image.load('b15.png')
+b16 = pg.image.load('b16.png') ; b17 = pg.image.load('b17.png')
+
+b1.set_alpha(170) ; b2.set_alpha(170) ; b3.set_alpha(170) ; b4.set_alpha(170) ; b5.set_alpha(170)
+b6.set_alpha(170) ; b7.set_alpha(170) ; b8.set_alpha(170) ; b9.set_alpha(170) ; b10.set_alpha(170)
+b11.set_alpha(170) ; b12.set_alpha(170) ; b13.set_alpha(170) ; b14.set_alpha(170) 
+b15.set_alpha(170) ; b16.set_alpha(170) ; b17.set_alpha(170)
+
+
+
+screen.blit(back,(0,0))
+screen.blit(get,(0,0))
+
+pg.display.update()
+
+num = pg.font.SysFont('simhei',36)
+
+def inputer():
+    p = 0
+    print('輸入你的CO2的ppm')
+    while running:
+        print(f'現在時間{p}分')
+        a = int(input('A點'))
+        text1 = num.render(f'A --{a}',True,(0,0,0), (255,255,255))
+        screen.blit(text1,(350,15))
+        if s+10 >= a >= s:
+             screen.blit(b1,(110,35))
+        elif s+20 >= a >= s+10:
+            screen.blit(b2,(110,35))
+        elif s+30 >= a >= s+20:
+            screen.blit(b3,(110,35))
+        elif s+40 >= a >= s+30:
+            screen.blit(b4,(110,35))
+        elif s+50 >= a >= s+40:
+            screen.blit(b5,(110,35))
+        elif s+60 >= a >= s+50:
+            screen.blit(b6,(110,35))
+        elif s+70 >= a >= s+60:
+            screen.blit(b7,(110,35))
+        elif s+80 >= a >= s+70:
+            screen.blit(b8,(110,35))
+        elif s+90 >= a >= s+80:
+            screen.blit(b9,(110,35))
+        elif s+100 >= a >= s+90:
+            screen.blit(b10,(110,35))
+        elif s+110 >= a >= s+100:
+            screen.blit(b11,(110,35))
+        elif s+120 >= a >= s+110:
+            screen.blit(b12,(110,35))
+        elif s+135 >= a >= s+120:
+            screen.blit(b13,(110,35))
+        elif s+150 >= a >= s+135:
+            screen.blit(b14,(110,35))
+        elif s+165 >= a >= s+150:
+            screen.blit(b15,(110,35))
+        elif s+180 >= a >= s+165:
+            screen.blit(b16,(110,35))
+        elif a >= s+180:
+            screen.blit(b17,(110,35))
+        pg.display.update()
+        
+        b = int(input('B點'))
+        text2 = num.render(f'B --{b}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,45))
+        if s+10 >= b >= s:
+            screen.blit(b1,(190,35))
+        elif s+20 >= b >= s+10:
+            screen.blit(b2,(190,35))
+        elif s+30 >= b >= s+20:
+            screen.blit(b3,(190,35))
+        elif s+40 >= b >= s+30:
+            screen.blit(b4,(190,35))
+        elif s+50 >= b >= s+40:
+            screen.blit(b5,(190,35))
+        elif s+60 >= b >= s+50:
+            screen.blit(b6,(190,35))
+        elif s+70 >= b >= s+60:
+            screen.blit(b7,(190,35))
+        elif s+80 >= b >= s+70:
+            screen.blit(b8,(190,35))
+        elif s+90 >= b >= s+80:
+            screen.blit(b9,(190,35))
+        elif s+100 >= b >= s+90:
+            screen.blit(b10,(190,35))
+        elif s+110 >= b >= s+100:
+            screen.blit(b11,(190,35))
+        elif s+120 >= b >= s+110:
+            screen.blit(b12,(190,35))
+        elif s+135 >= b >= s+120:
+            screen.blit(b13,(190,35))
+        elif s+150 >= b >= s+135:
+            screen.blit(b14,(190,35))
+        elif s+165 >= b >= s+150:
+            screen.blit(b15,(190,35))
+        elif s+180 >= b >= s+165:
+            screen.blit(b16,(190,35))
+        elif b >= s+180:
+            screen.blit(b17,(190,35))
+        pg.display.update()
+        
+        c = int(input('C點'))
+        text2 = num.render(f'C --{c}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,75))
+        if s+10 >= c >= s:
+            screen.blit(b1,(190,115))
+        elif s+20 >= c >= s+10:
+            screen.blit(b2,(190,115))
+        elif s+30 >= c >= s+20:
+            screen.blit(b3,(190,115))
+        elif s+40 >= c >= s+30:
+            screen.blit(b4,(190,115))
+        elif s+50 >= c >= s+40:
+            screen.blit(b5,(190,115))
+        elif s+60 >= c >= s+50:
+            screen.blit(b6,(190,115))
+        elif s+70 >= c >= s+60:
+            screen.blit(b7,(190,115))
+        elif s+80 >= c >= s+70:
+            screen.blit(b8,(190,115))
+        elif s+90 >= c >= s+80:
+            screen.blit(b9,(190,115))
+        elif s+100 >= c >= s+90:
+            screen.blit(b10,(190,115))
+        elif s+110 >= c >= s+100:
+            screen.blit(b11,(190,115))
+        elif s+120 >= c >= s+110:
+            screen.blit(b12,(190,115))
+        elif s+135 >= c >= s+120:
+            screen.blit(b13,(190,115))
+        elif s+150 >= c >= s+135:
+            screen.blit(b14,(190,115))
+        elif s+165 >= c >= s+150:
+            screen.blit(b15,(190,115))
+        elif s+180 >= c >= s+165:
+            screen.blit(b16,(190,115))
+        elif c >= s+180:
+            screen.blit(b17,(190,115))
+        pg.display.update()
+        d = int(input('D點'))
+        text2 = num.render(f'D --{d}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,105))
+        if s+10 >= d >= s:
+            screen.blit(b1,(190,195))
+        elif s+20 >= d >= s+10:
+            screen.blit(b2,(190,195))
+        elif s+30 >= d >= s+20:
+            screen.blit(b3,(190,195))
+        elif s+40 >= d >= s+30:
+            screen.blit(b4,(190,195))
+        elif s+50 >= d >= s+40:
+            screen.blit(b5,(190,195))
+        elif s+60 >= d >= s+50:
+            screen.blit(b6,(190,195))
+        elif s+70 >= d >= s+60:
+            screen.blit(b7,(190,195))
+        elif s+80 >= d >= s+70:
+            screen.blit(b8,(190,195))
+        elif s+90 >= d >= s+80:
+            screen.blit(b9,(190,195))
+        elif s+100 >= d >= s+90:
+            screen.blit(b10,(190,195))
+        elif s+110 >= d >= s+100:
+            screen.blit(b11,(190,195))
+        elif s+120 >= d >= s+110:
+            screen.blit(b12,(190,195))
+        elif s+135 >= d >= s+120:
+            screen.blit(b13,(190,195))
+        elif s+150 >= d >= s+135:
+            screen.blit(b14,(190,195))
+        elif s+165 >= d >= s+150:
+            screen.blit(b15,(190,195))
+        elif s+180 >= d >= s+165:
+            screen.blit(b16,(190,195))
+        elif d >= s+180:
+            screen.blit(b17,(190,195))
+        pg.display.update()
+        e = int(input('E點'))
+        text2 = num.render(f'E --{e}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,135))
+        if s+10 >= e >= s:
+            screen.blit(b1,(110,195))
+        elif s+20 >= e >= s+10:
+            screen.blit(b2,(110,195))
+        elif s+30 >= e >= s+20:
+            screen.blit(b3,(110,195))
+        elif s+40 >= e >= s+30:
+            screen.blit(b4,(110,195))
+        elif s+50 >= e >= s+40:
+            screen.blit(b5,(110,195))
+        elif s+60 >= e >= s+50:
+            screen.blit(b6,(110,195))
+        elif s+70 >= e >= s+60:
+            screen.blit(b7,(110,195))
+        elif s+80 >= e >= s+70:
+            screen.blit(b8,(110,195))
+        elif s+90 >= e >= s+80:
+            screen.blit(b9,(110,195))
+        elif s+100 >= e >= s+90:
+            screen.blit(b10,(110,195))
+        elif s+110 >= e >= s+100:
+            screen.blit(b11,(110,195))
+        elif s+120 >= e >= s+110:
+            screen.blit(b12,(110,195))
+        elif s+135 >= e >= s+120:
+            screen.blit(b13,(110,195))
+        elif s+150 >= e >= s+135:
+            screen.blit(b14,(110,195))
+        elif s+165 >= e >= s+150:
+            screen.blit(b15,(110,195))
+        elif s+180 >= e >= s+165:
+            screen.blit(b16,(110,195))
+        elif e >= s+180:
+            screen.blit(b17,(110,195))
+        pg.display.update()
+        f = int(input('F點'))
+        text2 = num.render(f'F --{f}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,165))
+        if s+10 >= f >= s:
+            screen.blit(b1,(30,195))
+        elif s+20 >= f >= s+10:
+            screen.blit(b2,(30,195))
+        elif s+30 >= f >= s+20:
+            screen.blit(b3,(30,195))
+        elif s+40 >= f >= s+30:
+            screen.blit(b4,(30,195))
+        elif s+50 >= f >= s+40:
+            screen.blit(b5,(30,195))
+        elif s+60 >= f >= s+50:
+            screen.blit(b6,(30,195))
+        elif s+70 >= f >= s+60:
+            screen.blit(b7,(30,195))
+        elif s+80 >= f >= s+70:
+            screen.blit(b8,(30,195))
+        elif s+90 >= f >= s+80:
+            screen.blit(b9,(30,195))
+        elif s+100 >= f >= s+90:
+            screen.blit(b10,(30,195))
+        elif s+110 >= f >= s+100:
+            screen.blit(b11,(30,195))
+        elif s+120 >= f >= s+110:
+            screen.blit(b12,(30,195))
+        elif s+135 >= f >= s+120:
+            screen.blit(b13,(30,195))
+        elif s+150 >= f >= s+135:
+            screen.blit(b14,(30,195))
+        elif s+165 >= f >= s+150:
+            screen.blit(b15,(30,195))
+        elif s+180 >= f >= s+165:
+            screen.blit(b16,(30,195))
+        elif f >= s+180:
+            screen.blit(b17,(30,195))
+        pg.display.update()
+        g = int(input('G點'))
+        text2 = num.render(f'G --{g}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,195))
+        if s+10 >= g >= s:
+            screen.blit(b1,(30,115))
+        elif s+20 >= g >= s+10:
+            screen.blit(b2,(30,115))
+        elif s+30 >= g >= s+20:
+            screen.blit(b3,(30,115))
+        elif s+40 >= g >= s+30:
+            screen.blit(b4,(30,115))
+        elif s+50 >= g >= s+40:
+            screen.blit(b5,(30,115))
+        elif s+60 >= g >= s+50:
+            screen.blit(b6,(30,115))
+        elif s+70 >= g >= s+60:
+            screen.blit(b7,(30,115))
+        elif s+80 >= g >= s+70:
+            screen.blit(b8,(30,115))
+        elif s+90 >= g >= s+80:
+            screen.blit(b9,(30,115))
+        elif s+100 >= g >= s+90:
+            screen.blit(b10,(30,115))
+        elif s+110 >= g >= s+100:
+            screen.blit(b11,(30,115))
+        elif s+120 >= g >= s+110:
+            screen.blit(b12,(30,115))
+        elif s+135 >= g >= s+120:
+            screen.blit(b13,(30,115))
+        elif s+150 >= g >= s+135:
+            screen.blit(b14,(30,115))
+        elif s+165 >= g >= s+150:
+            screen.blit(b15,(30,115))
+        elif s+180 >= g >= s+165:
+            screen.blit(b16,(30,115))
+        elif g >= s+180:
+            screen.blit(b17,(30,115))
+        pg.display.update()
+        h = int(input('H點'))
+        text2 = num.render(f'H --{h}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,225))
+        if s+10 >= h >= s:
+            screen.blit(b1,(30,35))
+        elif s+20 >= h >= s+10:
+            screen.blit(b2,(30,35))
+        elif s+30 >= h >= s+20:
+            screen.blit(b3,(30,35))
+        elif s+40 >= h >= s+30:
+            screen.blit(b4,(30,35))
+        elif s+50 >= h >= s+40:
+            screen.blit(b5,(30,35))
+        elif s+60 >= h >= s+50:
+            screen.blit(b6,(30,35))
+        elif s+70 >= h >= s+60:
+            screen.blit(b7,(30,35))
+        elif s+80 >= h >= s+70:
+            screen.blit(b8,(30,35))
+        elif s+90 >= h >= s+80:
+            screen.blit(b9,(30,35))
+        elif s+100 >= h >= s+90:
+            screen.blit(b10,(30,35))
+        elif s+110 >= h >= s+100:
+            screen.blit(b11,(30,35))
+        elif s+120 >= h >= s+110:
+            screen.blit(b12,(30,35))
+        elif s+135 >= h >= s+120:
+            screen.blit(b13,(30,35))
+        elif s+150 >= h >= s+135:
+            screen.blit(b14,(30,35))
+        elif s+165 >= h >= s+150:
+            screen.blit(b15,(30,35))
+        elif s+180 >= h >= s+165:
+            screen.blit(b16,(30,35))
+        elif h >= s+180:
+            screen.blit(b17,(30,35))
+        pg.display.update()
+        i = int(input('I點'))
+        text2 = num.render(f'I  --{i}',True,(0,0,0), (255,255,255))
+        screen.blit(text2,(350,255))
+        if s+10 >= i >= s:
+            screen.blit(b1,(110,115))
+        elif s+20 >= i >= s+10:
+            screen.blit(b2,(110,115))
+        elif s+30 >= i >= s+20:
+            screen.blit(b3,(110,115))
+        elif s+40 >= i >= s+30:
+            screen.blit(b4,(110,115))
+        elif s+50 >= i >= s+40:
+            screen.blit(b5,(110,115))
+        elif s+60 >= i >= s+50:
+            screen.blit(b6,(110,115))
+        elif s+70 >= i >= s+60:
+            screen.blit(b7,(110,115))
+        elif s+80 >= i >= s+70:
+            screen.blit(b8,(110,115))
+        elif s+90 >= i >= s+80:
+            screen.blit(b9,(110,115))
+        elif s+100 >= i >= s+90:
+            screen.blit(b10,(110,115))
+        elif s+110 >= i >= s+100:
+            screen.blit(b11,(110,115))
+        elif s+120 >= i >= s+110:
+            screen.blit(b12,(110,115))
+        elif s+135 >= i >= s+120:
+            screen.blit(b13,(110,115))
+        elif s+150 >= i >= s+135:
+            screen.blit(b14,(110,115))
+        elif s+165 >= i >= s+150:
+            screen.blit(b15,(110,115))
+        elif s+180 >= i >= s+165:
+            screen.blit(b16,(110,115))
+        elif i >= s+180:
+            screen.blit(b17,(110,115))
+        pg.display.update()            
+        use = input('是否更改數值、截圖或離開?(y/s/n)')
+        if use == 'y':
+            screen.blit(get,(0,0))
+            screen.blit(white,(350,15))
+            pg.display.update()
+            continue
+        elif use == 's' :
+            pg.image.save(screen,f'p{p}.png')
+            p += 5
+            screen.blit(get,(0,0))
+            screen.blit(white,(350,15))
+            pg.display.update()
+            continue
+        else:
+            break
+t = threading.Thread(target = inputer)
+t.start()            
+
+while running:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            running = False
+        
+        
+pg.quit()
